@@ -57,6 +57,11 @@ function showToast(message) {
 document.querySelectorAll('.choose-plan').forEach(button => {
   button.addEventListener('click', () => {
     const plan = button.dataset.plan;
+    const card = button.closest('.plan-card');
+
+    document.querySelectorAll('.plan-card').forEach(item => item.classList.remove('selected'));
+    card.classList.add('selected');
+
     const subject = document.querySelector('[name="assunto"]');
     const message = document.querySelector('[name="mensagem"]');
     subject.value = 'Planos';
